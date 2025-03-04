@@ -64,3 +64,18 @@ function editContact(name, newContact){
         return "Contact not found";
     }
 }   
+
+function deleteContact(name){
+    let fullName = name.split(" ");
+
+    let index = addressBook.findIndex(
+        (contact) => contact.firstName == fullName[0] && contact.lastName == fullName[1]
+    )
+
+    if(index != -1){
+        addressBook.splice(index, 1);
+    }
+    else{
+        return "Contact not found";
+    }
+}
