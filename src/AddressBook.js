@@ -83,3 +83,20 @@ function deleteContact(name){
 function countContacts(){
     return addressBook.reduce((count) => count +1, 0);
 }
+
+function isDuplicate(name){
+    let fullName = name.split(" ");
+
+    return addressBook.some(
+        (contact) => contact.firstName == fullName[0] && contact.lastName == fullName[1]
+    );
+}
+
+function addUniqueContact(contact){
+    if(!isDuplicate(contact.firstName + " " + contact.lastName)){
+        addressBook.push(contact);
+    }
+    else{
+        console.error("Contact already exists");
+    }
+}
