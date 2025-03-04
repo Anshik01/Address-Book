@@ -39,3 +39,12 @@ function validate(contact) {
     }
     return true;
 }
+
+function addContact(contact){
+    if(validate(contact)){
+        addressBook.push(contact);
+    }
+    else{
+        return "Invalid Contact";
+    }
+}
