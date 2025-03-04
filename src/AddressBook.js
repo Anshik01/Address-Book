@@ -79,3 +79,7 @@ function deleteContact(name){
         return "Contact not found";
     }
 }
+
+function countContacts(){
+    return addressBook.reduce((count) => count +1, 0);
+}
