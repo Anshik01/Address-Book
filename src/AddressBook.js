@@ -48,3 +48,19 @@ function addContact(contact){
         return "Invalid Contact";
     }
 }
+
+function editContact(name, newContact){
+    let fullName = name.split(" ");
+
+    let contact = addressBook.findIndex(
+        (contact) => contact.firstName == fullName[0] && contact.lastName == fullName[1]
+    )
+
+    if(contact != -1){
+        addressBook[contact] = newContact;
+    }
+    
+    else{
+        return "Contact not found";
+    }
+}   
