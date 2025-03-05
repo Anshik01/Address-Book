@@ -125,3 +125,9 @@ function sortContactByName(){
                  a.lastName.localeCompare(b.lastName) 
     )
 }
+
+function sortByLocation(attribute){
+    return addressBook.sort(
+        (a,b) => a[attribute].localeCompare(b[attribute])
+    )
+}
