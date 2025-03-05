@@ -100,3 +100,9 @@ function addUniqueContact(contact){
         console.error("Contact already exists");
     }
 }
+
+function search(cityOrState){
+    return addressBook.filter(
+        (contact) => contact.city == cityOrState || contact.state == cityOrState
+    )
+}
